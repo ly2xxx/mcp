@@ -16,6 +16,19 @@
         "fetch": {
             "command": "uvx",
 			"args": ["mcp-server-fetch"]
+        },
+        "desktop-commander": {
+            "command": "cmd",
+            "args": [
+                "/c",
+                "npx",
+                "-y",
+                "@smithery/cli@latest",
+                "run",
+                "@wonderwhy-er/desktop-commander",
+                "--key",
+                "c2e66a53-de76-41f9-9e62-01d3e60cb165"
+            ]
         }
 	}
 }
