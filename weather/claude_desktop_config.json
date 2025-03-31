@@ -8,6 +8,10 @@
                 "run",
                 "weather.py"
             ]
-        }
+        },
+		"mcp-server-time": {
+			"command": "uvx",
+			"args": ["mcp-server-time"]
+		}
 	}
 }
