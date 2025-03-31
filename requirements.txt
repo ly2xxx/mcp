@@ -1,2 +1,4 @@
 mcp==1.5.0
 mcp-server-time==0.6.2
+mcp[cli]
+httpx==0.28.1
