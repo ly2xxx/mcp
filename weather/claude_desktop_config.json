@@ -29,6 +29,15 @@
                 "--key",
                 "c2e66a53-de76-41f9-9e62-01d3e60cb165"
             ]
-        }
+        },
+		"langflow":{
+			"command": "bin/sh",
+			"args": ["-c", ""],
+			"env": {
+				"MCP_HOST": "http://127.0.0.1:7860",
+				"DEBUG": "false"
+			}
+		}
+		
 	}
 }
