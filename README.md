@@ -6,6 +6,10 @@ https://github.com/modelcontextprotocol/servers
 
 https://smithery.ai/
 
+https://mcp.so/
+
+https://cursor.directory/mcp
+
 ## MCP client
 [![ MCP client](https://img.youtube.com/vi/L94WBLL0KjY/hqdefault.jpg)](https://m.youtube.com/watch?v=L94WBLL0KjY)
 
