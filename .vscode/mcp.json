@@ -1,0 +1,8 @@
+{
+    "servers": {
+      "mcp Docs": {
+        "type": "sse",
+        "url": "https://gitmcp.io/ly2xxx/mcp"
+      }
+    }
+  }
