@@ -12,4 +12,7 @@ https://smithery.ai/
 ## MCP server
 [![ MCP server](https://img.youtube.com/vi/qb95jXnCOdc/hqdefault.jpg)](https://m.youtube.com/watch?v=qb95jXnCOdc)
 
+## MCP holistic
+[![ MCP holistic](https://img.youtube.com/vi/_d0duu3dED4/hqdefault.jpg)](https://m.youtube.com/watch?v=_d0duu3dED4)
+
 Code in https://modelcontextprotocol.io/quickstart/server 
