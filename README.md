@@ -24,29 +24,29 @@ Code in https://modelcontextprotocol.io/quickstart/server
 
 
 ## Run 3rd party MCP server in SSE mode - example
-'''
+```bash
 git submodule add https://github.com/haris-musa/excel-mcp-server.git excel-mcp-server
-'''
-'''
+```
+```bash
 pip install uv
-'''
-'''
+```
+```bash
 cd excel-mcp-server
-'''
-'''
+```
+```bash
 uv venv
-'''
-'''
+```
+```bash
 .venv\Scripts\activate
-'''
-'''
+```
+```bash
 uv pip install -e .
-'''
-'''
+```
+```bash
 uv run excel-mcp-server
-'''
+```
 Add following configuration
-'''
+```bash
 {
   "mcpServers": {
     "excel": {
@@ -57,4 +57,4 @@ Add following configuration
     }
   }
 }
-'''
+```
