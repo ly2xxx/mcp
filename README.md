@@ -23,12 +23,38 @@ https://cursor.directory/mcp
 Code in https://modelcontextprotocol.io/quickstart/server 
 
 
-## Run 3rd party MCP server in SSE mode
+## Run 3rd party MCP server in SSE mode - example
 '''
 git submodule add https://github.com/haris-musa/excel-mcp-server.git excel-mcp-server
 '''
 '''
-python -m venv .venv
+pip install uv
 '''
-
-
+'''
+cd excel-mcp-server
+'''
+'''
+uv venv
+'''
+'''
+.venv\Scripts\activate
+'''
+'''
+uv pip install -e .
+'''
+'''
+uv run excel-mcp-server
+'''
+Add following configuration
+'''
+{
+  "mcpServers": {
+    "excel": {
+      "url": "http://localhost:8000/sse",
+      "env": {
+        "EXCEL_FILES_PATH": "/path/to/excel/files"
+      }
+    }
+  }
+}
+'''
