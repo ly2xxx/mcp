@@ -21,3 +21,14 @@ https://cursor.directory/mcp
 [![ MCP holistic](https://img.youtube.com/vi/_d0duu3dED4/hqdefault.jpg)](https://m.youtube.com/watch?v=_d0duu3dED4)
 
 Code in https://modelcontextprotocol.io/quickstart/server 
+
+
+## Run 3rd party MCP server in SSE mode
+'''
+git submodule add https://github.com/haris-musa/excel-mcp-server.git excel-mcp-server
+'''
+'''
+python -m venv .venv
+'''
+
+
