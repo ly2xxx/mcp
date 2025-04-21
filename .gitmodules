@@ -1,3 +1,6 @@
 [submodule "common"]
 	path = common
 	url = https://github.com/ly2xxx/common.git
+[submodule "excel-mcp-server"]
+	path = excel-mcp-server
+	url = https://github.com/haris-musa/excel-mcp-server.git
