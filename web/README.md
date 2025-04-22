@@ -30,7 +30,7 @@ python -m playwright install firefox
 Run the MCP server:
 
 ```bash
-python webpage_extractor_server.py
+python webpage_extractor_mcp.py
 ```
 
 ## Claude installation
