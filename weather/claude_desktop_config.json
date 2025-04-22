@@ -48,6 +48,17 @@
                 "c2e66a53-de76-41f9-9e62-01d3e60cb165"
             ]
         },
+        "playwright-mcp": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@smithery/cli@latest",
+                "run",
+                "@microsoft/playwright-mcp",
+                "--key",
+                "c2e66a53-de76-41f9-9e62-01d3e60cb165"
+            ]
+        },
         "filesystem": {
 			"command": "cmd",
 			"args": [
