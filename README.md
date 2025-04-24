@@ -20,6 +20,9 @@ https://cursor.directory/mcp
 ## MCP holistic
 [![ MCP holistic](https://img.youtube.com/vi/_d0duu3dED4/hqdefault.jpg)](https://m.youtube.com/watch?v=_d0duu3dED4)
 
+## MCP in langflow
+[![ MCP langflow](https://img.youtube.com/vi/pEjsaVVPjdI/hqdefault.jpg)](https://www.youtube.com/watch?v=pEjsaVVPjdI)
+
 Code in https://modelcontextprotocol.io/quickstart/server 
 
 
