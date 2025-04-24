@@ -23,6 +23,9 @@ https://cursor.directory/mcp
 ## MCP in langflow
 [![ MCP langflow](https://img.youtube.com/vi/pEjsaVVPjdI/hqdefault.jpg)](https://www.youtube.com/watch?v=pEjsaVVPjdI)
 
+## MCP self-host
+[![ MCP self-host](https://img.youtube.com/vi/OUPW4DJMAsA/hqdefault.jpg)](https://www.youtube.com/watch?v=OUPW4DJMAsA)
+
 Code in https://modelcontextprotocol.io/quickstart/server 
 
 
