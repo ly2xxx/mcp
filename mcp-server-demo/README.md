@@ -87,3 +87,8 @@ uv run --with mcp mcp run server.py
 ```bash
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
+
+# To access locally hosted MCP Server from docker hosted langflow
+```bash
+http://host.docker.internal:3001/sse
+```
