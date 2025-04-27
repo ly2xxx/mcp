@@ -1,6 +1,6 @@
 from mcp.server.fastmcp import FastMCP
 from starlette.applications import Starlette
-from starlette.routing import Mount
+from starlette.routing import Mount, Route
 import uvicorn
 
 # Create an MCP server instance named "MyServer"
@@ -12,11 +12,22 @@ def ping() -> str:
     """A simple ping tool returning 'pong'."""
     return "pong"
 
-# Mount the MCP server's SSE transport on the '/sse' path using Starlette
+# Get the SSE app
+sse_app = mcp.sse_app()
+
+# Get the message handler
+async def message_handler(request):
+    return await mcp.handle_message(request)
+
+# Mount the MCP server's endpoints
 app = Starlette(routes=[
-    Mount("/sse", app=mcp.sse_app()),
+    Route("/sse", endpoint=sse_app),
+    Route("/sse/", endpoint=sse_app),
+    Route("/messages", endpoint=message_handler, methods=["POST"]),
+    Route("/messages/", endpoint=message_handler, methods=["POST"]),
 ])
 
 if __name__ == "__main__":
-    # Run the Starlette app with Uvicorn on localhost:3001
-    uvicorn.run(app, host="127.0.0.1", port=3001)
+    # Run the Starlette app with Uvicorn on all interfaces
+    uvicorn.run(app, host="0.0.0.0", port=3001)
+
