@@ -89,6 +89,12 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 ```
 
 # To access locally hosted MCP Server from docker hosted langflow
+Run in SSE mode:
+```bash
+python server.py
+```
+Access from langflow MCP component in SSE mode:
 ```bash
 http://host.docker.internal:3001/sse
 ```
+![MCP Server langflow](image.png)
