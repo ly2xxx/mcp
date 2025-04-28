@@ -6,9 +6,13 @@ from typing import Optional
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from mcp.server.fastmcp import FastMCP
 from common.webpage_extractor.webpage_extractor.extract_cleaner_webpage_sync import extract_clean_content
+import uvicorn
 
 # Initialize FastMCP server
 mcp = FastMCP("webpage-extractor")
+
+# Get the ASGI app from the MCP server
+app = mcp.sse_app()
 
 @mcp.tool()
 async def extract_webpage(url: str, output_dir: Optional[str] = None) -> str:
@@ -45,23 +49,21 @@ async def extract_webpage(url: str, output_dir: Optional[str] = None) -> str:
             links_summary.append(f"- {link['text'][:50]}: {link['url']}")
         
         response = f"""
-Webpage Extraction Results for: {url}
+            Webpage Extraction Results for: {url}
 
-Title: {clean_data['title']}
+            Title: {clean_data['title']}
+            """
+            # Content Preview:
+            # {"".join(f"{item}\n" for item in content_summary)}
 
-Content Preview:
-{"".join(f"{item}\n" for item in content_summary)}
+            # Links Preview:
+            # {"".join(f"{link}\n" for link in links_summary)}
 
-Links Preview:
-{"".join(f"{link}\n" for link in links_summary)}
-
-Files saved:
-- Screenshot: {result['screenshot_path']}
-- HTML: {result['html_path']}
-
-Total content items: {len(clean_data['main_content'])}
-Total links: {len(clean_data['links'])}
-"""
+            # Files saved:
+            # - HTML: {result['html_path']}
+            # - JSON: {result['json_path']}
+            # - Text: {result['text_path']}
+            # """
         return response
     
     except Exception as e:
@@ -98,6 +100,11 @@ async def extract_webpage_json(url: str, output_dir: Optional[str] = None) -> st
     except Exception as e:
         return json.dumps({"error": str(e)})
     
+# if __name__ == "__main__":
+#     print("Starting webpage extractor MCP server...")
+#     mcp.run(transport='stdio')
+
 if __name__ == "__main__":
     print("Starting webpage extractor MCP server...")
-    mcp.run(transport='stdio')
+    # Run the ASGI app with Uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=3001)

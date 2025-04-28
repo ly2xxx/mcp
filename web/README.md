@@ -12,6 +12,13 @@ https://github.com/modelcontextprotocol/python-sdk
 - MCP CLI
 
 ## Installation
+0. Refresh submodule code
+```bash
+git submodule update --init
+```
+```bash
+cd common && pip install -r requirements.txt
+```
 
 1. Install the required dependencies:
 
@@ -30,6 +37,7 @@ python -m playwright install firefox
 Run the MCP server:
 
 ```bash
+cd web
 python webpage_extractor_mcp.py
 ```
 
