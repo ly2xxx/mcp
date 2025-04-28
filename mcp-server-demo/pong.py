@@ -11,7 +11,7 @@ def ping() -> str:
     return "pong"
 
 # Get the ASGI app from the MCP server
-app = mcp.asgi_app()
+app = mcp.sse_app()
 
 if __name__ == "__main__":
     # Run the ASGI app with Uvicorn
