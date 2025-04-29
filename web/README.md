@@ -63,7 +63,7 @@ added
     }
 ```
 
-Or manually add to Claude SSE mode:
+Or manually add to Claude SSE mode (not working because Claude only supports stdio - https://www.reddit.com/r/ClaudeAI/comments/1jj80mk/how_can_i_configure_an_mcp_sse_endpoint_in_claude/?rdt=38815 ):
 ```bash
 	"webpage-extractor": {
 		"command": "npx",

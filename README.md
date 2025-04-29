@@ -12,6 +12,7 @@ https://mcp.so/
 https://cursor.directory/mcp
 
 Docker - https://huggingface.co/blog/lynn-mikami/markitdown-mcp
+MCP Gateway - https://github.com/lightconetech/mcp-gateway (bridges the stdio-based Model Context Protocol (MCP) implementation in Claude Desktop with HTTP/SSE-based MCP servers)
 
 ## MCP client
 [![ MCP client](https://img.youtube.com/vi/L94WBLL0KjY/hqdefault.jpg)](https://m.youtube.com/watch?v=L94WBLL0KjY)
