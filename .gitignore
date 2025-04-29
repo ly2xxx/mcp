@@ -166,3 +166,4 @@ cython_debug/
 # Ignore HTML and PNG files in web directory
 web/**/*.html
 web/**/*.png
+!web/**/demo.png

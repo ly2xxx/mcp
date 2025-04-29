@@ -63,17 +63,24 @@ added
     }
 ```
 
-Or manually add to Claude SSE mode (not working because Claude only supports stdio - https://www.reddit.com/r/ClaudeAI/comments/1jj80mk/how_can_i_configure_an_mcp_sse_endpoint_in_claude/?rdt=38815 ):
+Or manually add to Claude SSE mode (https://developers.cloudflare.com/agents/guides/remote-mcp-server/#connect-your-remote-mcp-server-to-claude-and-other-mcp-clients-via-a-local-proxy):
 ```bash
-	"webpage-extractor": {
-		"command": "npx",
-		"args": [
-			"-y",
-			"http://127.0.0.1:3001/sse"
-		]
-	}
+{
+  "mcpServers": {
+    "webpage-extractor": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "http://127.0.0.1:3001/sse"
+      ]
+    }
+  }
+}
 ```
+Relevant discussions:
 https://www.perplexity.ai/search/claude-desktop-mcp-config-webp-IfTkMILMQp2X9F5FEtST4A 
+https://www.reddit.com/r/ClaudeAI/comments/1jj80mk/how_can_i_configure_an_mcp_sse_endpoint_in_claude/?rdt=38815 
+
 
 ## Langflow installation
 MCP Server -> SSE mode
@@ -116,3 +123,6 @@ The server generates two files for each extraction:
 2. A cleaned HTML version of the webpage (.html)
 
 These files are saved in the specified output directory with timestamps in their filenames.
+
+## Demo - MCP tools in action
+![web extract MCP demo](demo.png)
