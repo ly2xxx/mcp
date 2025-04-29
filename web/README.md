@@ -43,7 +43,7 @@ python webpage_extractor_mcp.py
 
 ## Claude installation
 
-Add the MCP server to Claude:
+Add the MCP server to Claude STDIO mode:
 
 ```bash
 mcp install .\webpage_extractor_mcp.py
@@ -61,6 +61,24 @@ added
         "D:\\code\\mcp\\web\\webpage_extractor_mcp.py"
       ]
     }
+```
+
+Or manually add to Claude SSE mode:
+```bash
+	"webpage-extractor": {
+		"command": "npx",
+		"args": [
+			"-y",
+			"http://127.0.0.1:3001/sse"
+		]
+	}
+```
+https://www.perplexity.ai/search/claude-desktop-mcp-config-webp-IfTkMILMQp2X9F5FEtST4A 
+
+## Langflow installation
+MCP Server -> SSE mode
+```bash
+http://host.docker.internal:3001/sse
 ```
 
 ## Available Tools

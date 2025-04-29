@@ -1,4 +1,5 @@
 https://modelcontextprotocol.io/quickstart/server
+https://github.com/jdhettema/mcp-weather-sse
 
 # Install uv - python package management
 windows -- 
