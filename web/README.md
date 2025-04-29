@@ -126,3 +126,4 @@ These files are saved in the specified output directory with timestamps in their
 
 ## Demo - MCP tools in action
 ![web extract MCP demo](demo.png)
+https://claude.ai/public/artifacts/aeaeb14b-20f4-4530-9bee-7da609242bfc
