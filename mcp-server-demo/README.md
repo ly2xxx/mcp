@@ -14,13 +14,19 @@ python -m uv init mcp-server-demo
 cd mcp-server-demo
 ```
 
-1. Install the required dependencies:
+1. Install the required dependencies (first time only):
 
 ```bash
 python -m uv add "mcp[cli]"
 ```
 
-2. Initialize server.py:
+  or (second time onwards):
+
+```bash
+python -m uv sync
+```
+
+2. Initialize server.py (first time only):
 
 ```python
 # server.py
