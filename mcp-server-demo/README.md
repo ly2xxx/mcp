@@ -5,9 +5,9 @@ https://github.com/modelcontextprotocol/python-sdk
 - Python 3.7+
 
 ## Installation
-0. Initialize the project:
+0. Initialize the project (assume "pip install uv" in main python):
 ```bash
-uv init mcp-server-demo
+python -m uv init mcp-server-demo
 ```
 
 ```bash
@@ -17,7 +17,7 @@ cd mcp-server-demo
 1. Install the required dependencies:
 
 ```bash
-uv add "mcp[cli]"
+python -m uv add "mcp[cli]"
 ```
 
 2. Initialize server.py:
