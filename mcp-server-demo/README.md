@@ -16,15 +16,14 @@ cd mcp-server-demo
 
 1. Install the required dependencies (first time only):
 
-```bash
-python -m uv add "mcp[cli]"
-```
-
-  or (second time onwards):
-
-```bash
-python -m uv sync
-```
+   ```bash
+   python -m uv add "mcp[cli]"
+   ```
+   
+   or (second time onwards):
+   ```bash
+   python -m uv sync
+   ```
 
 2. Initialize server.py (first time only):
 
