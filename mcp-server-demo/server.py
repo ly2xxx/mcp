@@ -3,7 +3,11 @@ from mcp.server.fastmcp import FastMCP
 import uvicorn
 
 # Create an MCP server
-mcp = FastMCP("Demo")
+mcp = FastMCP("Demo",
+host="0.0.0.0",
+port=3001,
+timeout=60,
+)
 
 # Get the ASGI app from the MCP server
 app = mcp.sse_app()
