@@ -51,16 +51,33 @@ def get_greeting(name: str) -> str:
 
 ## Usage
 
-Run the MCP server:
+Activate the virtual environment
 ```bash
 .venv\Scripts\activate
 ```
 
+Run the MCP server in SSE mode:
+```bash
+python server.py
+```
+
+Debug using MCP Inspector v0.14.1 (in a new powershell session) 
 ```bash
 mcp dev server.py
 ```
-Then open http://127.0.0.1:6274 in your browser to access the MCP server.
+Then open http://127.0.0.1:6274 in your browser to access the MCP server. Remember to copy the Session token to MCP Inspector's SSE mode console before connecting.
+![1749913759577](image/README/1749913759577.png)
 
+# To access locally hosted MCP Server from docker hosted langflow
+Run in SSE mode:
+```bash
+python server.py
+```
+Access from langflow MCP component in SSE mode:
+```bash
+http://host.docker.internal:3001/sse
+```
+![MCP Server langflow](image.png)
 
 ## Claude installation
 ```bash
@@ -92,14 +109,3 @@ uv run --with mcp mcp run server.py
 ```bash
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
-
-# To access locally hosted MCP Server from docker hosted langflow
-Run in SSE mode:
-```bash
-python server.py
-```
-Access from langflow MCP component in SSE mode:
-```bash
-http://host.docker.internal:3001/sse
-```
-![MCP Server langflow](image.png)
