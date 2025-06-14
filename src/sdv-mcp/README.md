@@ -39,6 +39,32 @@ Run the MCP server with the created configuration file as `mcp.json` either glob
 }
 ```
 
+
+## Run the project
+```json
+{
+    "servers": {
+      "mcp Docs": {
+        "type": "sse",
+        "url": "https://gitmcp.io/ly2xxx/mcp"
+      },
+      "sdv_mcp": {
+        "command": "uv",
+        "args": [
+          "--directory",
+          "H:\\code\\yl\\mcp\\src\\sdv-mcp",
+          "run",
+          "--with",
+          "mcp",
+          "server.py"
+        ]
+      }
+    }
+}
+```
+
+![1749927960355](image/README/1749927960355.png)
+
 ## 📬 Stay Updated with Our Newsletter!
 
 **Get a FREE Data Science eBook** 📖 with 150+ essential lessons in Data Science when you subscribe to our newsletter! Stay in the loop with the latest tutorials, insights, and exclusive resources. [Subscribe now!](https://join.dailydoseofds.com)

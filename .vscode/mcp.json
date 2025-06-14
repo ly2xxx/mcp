@@ -3,6 +3,17 @@
       "mcp Docs": {
         "type": "sse",
         "url": "https://gitmcp.io/ly2xxx/mcp"
+      },
+      "sdv_mcp": {
+        "command": "uv",
+        "args": [
+          "--directory",
+          "H:\\code\\yl\\mcp\\src\\sdv-mcp",
+          "run",
+          "--with",
+          "mcp",
+          "server.py"
+        ]
       }
     }
   }
