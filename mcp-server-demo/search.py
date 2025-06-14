@@ -59,17 +59,45 @@ def search_web(base_url: str, query: str, query_param: str = "q", additional_par
             if parser_func:
                 return parser_func(response, query)
             
-            # Try to parse as JSON first
+            # Try to parse as JSON and look for organic results
             try:
-                results = response.json().get("results", [])
-                if results and len(results) > 0:
-                    return [result["title"] for result in results if "title" in result]
-                else:
-                    return [f"Search completed for '{query}' - no results found"]
-            except:
+                data = response.text
+                return data
+                # json_data = response.json()
+                
+                # # # Check for organic results first
+                # # if 'organic' in json_data and json_data['organic']:
+                # #     organic_results = json_data['organic']
+                # #     results = []
+                    
+                # #     for result in organic_results[:10]:  # Limit to first 10 results
+                # #         if isinstance(result, dict):
+                # #             # Try different common fields for title
+                # #             title = result.get('title') or result.get('name') or result.get('snippet', 'No title')
+                # #             results.append(title)
+                    
+                # #     if results:
+                # #         return results
+                # #     else:
+                # #         return [f"Search completed for '{query}' - organic results found but no titles extracted"]
+                
+                # # # Fallback to other result structures
+                # # elif 'results' in json_data and json_data['results']:
+                # #     results = json_data['results']
+                # #     return [result.get("title", "No title") for result in results[:10] if isinstance(result, dict)]
+                
+                # # else:
+                # #     return [f"Search completed for '{query}' - no organic or results array found in response"]
+                # return json_data
+                    
+            except json.JSONDecodeError:
                 # If JSON parsing fails, return basic info about the response
                 content_length = len(response.text)
-                return [f"Search completed for '{query}' - received {content_length} characters of content"]
+                return [f"Search completed for '{query}' - received {content_length} characters of non-JSON content"]
+            except KeyError as e:
+                return [f"Search completed for '{query}' - missing expected key: {str(e)}"]
+            except Exception as e:
+                return [f"Search completed for '{query}' - error parsing response: {str(e)}"]
         else:
             return [f"Error: HTTP {response.status_code} - {response.reason}"]
             
@@ -86,17 +114,25 @@ def parse_duckduckgo_response(response, query):
         data = response.json()
         results = []
         
-        # DuckDuckGo has different result types
-        if "RelatedTopics" in data and data["RelatedTopics"]:
-            for topic in data["RelatedTopics"][:5]:  # Limit to first 5
-                if isinstance(topic, dict) and "Text" in topic:
-                    results.append(topic["Text"][:100] + "..." if len(topic["Text"]) > 100 else topic["Text"])
+        # Check for organic results first
+        if 'organic' in data and data['organic']:
+            for result in data['organic'][:5]:
+                if isinstance(result, dict):
+                    title = result.get('title') or result.get('snippet', 'No title')
+                    results.append(title)
         
-        if "Answer" in data and data["Answer"]:
-            results.insert(0, f"Answer: {data['Answer']}")
-        
-        if "Definition" in data and data["Definition"]:
-            results.insert(0, f"Definition: {data['Definition']}")
+        # DuckDuckGo has different result types as fallback
+        if not results:
+            if "RelatedTopics" in data and data["RelatedTopics"]:
+                for topic in data["RelatedTopics"][:5]:  # Limit to first 5
+                    if isinstance(topic, dict) and "Text" in topic:
+                        results.append(topic["Text"][:100] + "..." if len(topic["Text"]) > 100 else topic["Text"])
+            
+            if "Answer" in data and data["Answer"]:
+                results.insert(0, f"Answer: {data['Answer']}")
+            
+            if "Definition" in data and data["Definition"]:
+                results.insert(0, f"Definition: {data['Definition']}")
         
         if not results:
             return [f"Search completed for '{query}' - no specific results found"]
@@ -162,4 +198,3 @@ def get_greeting(name: str) -> str:
 if __name__ == "__main__":
     # Run the ASGI app with Uvicorn
     uvicorn.run(app, host="0.0.0.0", port=3001)
-
