@@ -4,6 +4,9 @@
         "type": "sse",
         "url": "https://gitmcp.io/ly2xxx/mcp"
       },
+      "langflow":{
+        "url": "http://localhost:7880/api/v1/mcp/sse"
+      },
       "sdv_mcp": {
         "command": "uv",
         "args": [
