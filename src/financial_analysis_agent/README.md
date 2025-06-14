@@ -73,6 +73,8 @@ You can now chat with Cursor and analyze stock market data. Simply provide the s
 
 ---
 
+![1749928963881](image/README/1749928963881.png)
+
 ## 📬 Stay Updated with Our Newsletter!
 **Get a FREE Data Science eBook** 📖 with 150+ essential lessons in Data Science when you subscribe to our newsletter! Stay in the loop with the latest tutorials, insights, and exclusive resources. [Subscribe now!](https://join.dailydoseofds.com)
 

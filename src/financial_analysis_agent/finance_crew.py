@@ -13,7 +13,7 @@ class QueryAnalysisOutput(BaseModel):
     action: str = Field(..., description="Action to be performed (e.g., 'fetch', 'plot').")
 
 llm = LLM(
-    model="ollama/deepseek-r1:7b",
+    model="ollama/deepseek-r1:latest",
     base_url="http://localhost:11434",
     # temperature=0.7
 )
